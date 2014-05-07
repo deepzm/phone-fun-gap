@@ -78,24 +78,7 @@ h1 {
     text-align:center;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
 
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
 
 @keyframes fade {
     from { opacity: 1.0; }
@@ -112,4 +95,16 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+
+.profile-img-small {
+    max-height: 45px;
+    width: auto;
+    padding-top: 4px;
 }
