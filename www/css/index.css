@@ -41,7 +41,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -97,10 +96,15 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
-html,
-body {
+html {
   height: 100%;
   background-color: #333;
+}
+
+.nav > li {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 .profile-img-small {
