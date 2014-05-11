@@ -33,10 +33,34 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        document.addEventListener('pause', app.onDevicePause, false);
+        document.addEventListener('resume', app.onDeviceResume, false);
+        var crap = window.localStorage.getItem("crappyStuff");
+        if(crap) {
+            $("#crapTextInput").val(crap);
+            $("#display").text("");
+            $("#display").text(crap);
+        }
+        
         $("#crapTextInput").on("keyup" , function (event) {
             $("#display").text("");
             $("#display").text(event.target.value);
         });
+    },
+
+    onDevicePause: function () {
+        $("#display").text("");
+        $("#display").text("Saved crap");
+        window.localStorage.setItem("crappyStuff", $("#crapTextInput").val());
+    },
+
+    onDeviceResume: function () {
+        var crap = window.localStorage.getItem("crappyStuff");
+        if(crap) {
+            $("#crapTextInput").val(crap);
+            $("#display").text("");
+            $("#display").text(crap);
+        }
     }
     
 };
